@@ -1,0 +1,32 @@
+[
+  {
+    "id": "#1",
+    "name": "Aryan",
+    "img": "/temp.png"
+  },
+  {
+    "id": "#2",
+    "name": "karan",
+    "img": "/temp.png"
+  },
+  {
+    "id": "#3",
+    "name": "Kishan",
+    "img": "/temp.png"
+  },
+  {
+    "id": "#4",
+    "name": "Rishi",
+    "img": "/temp.png"
+  },
+  {
+    "id": "#5",
+    "name": "Rohan",
+    "img": "/temp.png"
+  },
+  {
+    "id": "#6",
+    "name": "Viki",
+    "img": "/temp.png"
+  }
+]

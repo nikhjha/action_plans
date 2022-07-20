@@ -1,0 +1,49 @@
+[
+  {
+    "id": "1",
+    "title": "Marketing",
+    "open": true,
+    "subcategories": [
+      {
+        "id": "@1",
+        "title": "Wordpress",
+        "open": false,
+        "pointers": []
+      },
+      {
+        "id": "@2",
+        "title": "Google Drive",
+        "open": true,
+        "pointers": [
+          {
+            "id": "P_1",
+            "name": "Pointer 1"
+          },
+          {
+            "id": "P_2",
+            "name": "Pointer 2"
+          },
+          {
+            "id": "P_3",
+            "name": "Pointer 3"
+          }
+        ]
+      }
+    ],
+    "teammates": ["#1", "#2"]
+  },
+  {
+    "id": "2",
+    "title": "Design",
+    "open": false,
+    "subcategories": [],
+    "teammates": []
+  },
+  {
+    "id": "3",
+    "title": "Sales",
+    "open": false,
+    "subcategories": [],
+    "teammates": []
+  }
+]
