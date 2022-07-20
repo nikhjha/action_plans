@@ -1,5 +1,6 @@
 <script>
   import Layer from "./Layer.svelte";
+  import { slide } from "svelte/transition";
   import { createEventDispatcher } from "svelte";
   import { v4 as uuidv4 } from "uuid";
   import CategoryBar from "./CategoryBar.svelte";
@@ -111,28 +112,30 @@
   {/if}
 </div>
 {#if plan.open}
-  {#each plan.subcategories as category (category.id)}
-    <CategoryBar
-      {category}
-      on:delete={(e) => {
-        dispatch("delete_category", { plan: plan.id, category: e.detail });
-      }}
-      on:expand={(e) => {
-        dispatch("expand_category", { plan: plan.id, category: e.detail });
-      }}
-      on:delete_pointer={(e) => {
-        dispatch("delete_pointer", { plan: plan.id, ...e.detail });
-      }}
-      on:add_pointer={(e) => {
-        dispatch("add_pointer", {
-          plan: plan.id,
-          category: e.detail.category,
-          pointer: {
-            name: e.detail.pointer,
-            id: uuidv4(),
-          },
-        });
-      }}
-    />
-  {/each}
+  <div class="flex flex-col gap-2" transition:slide>
+    {#each plan.subcategories as category (category.id)}
+      <CategoryBar
+        {category}
+        on:delete={(e) => {
+          dispatch("delete_category", { plan: plan.id, category: e.detail });
+        }}
+        on:expand={(e) => {
+          dispatch("expand_category", { plan: plan.id, category: e.detail });
+        }}
+        on:delete_pointer={(e) => {
+          dispatch("delete_pointer", { plan: plan.id, ...e.detail });
+        }}
+        on:add_pointer={(e) => {
+          dispatch("add_pointer", {
+            plan: plan.id,
+            category: e.detail.category,
+            pointer: {
+              name: e.detail.pointer,
+              id: uuidv4(),
+            },
+          });
+        }}
+      />
+    {/each}
+  </div>
 {/if}

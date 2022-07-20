@@ -8,7 +8,7 @@
 </script>
 
 <div
-  class="w-full rounded-md  p-1 px-2 flex gap-2 text-gray-400 bg-slate-100 relative items-center"
+  class="w-full rounded-md  p-1 px-2 flex gap-2 text-gray-400 bg-slate-100 relative items-center before:content-[''] before:absolute before:-z-10 before:bottom-1/2 before:-left-4 before:w-6 before:h-16 before:border-l-2 before:border-b-2 before:rounded-md"
 >
   <span class="material-symbols-outlined cursor-pointer"> drag_indicator </span>
   <h4 class="text-blue-600 text-base">{pointer.name}</h4>

@@ -5,6 +5,7 @@
   let showDeletePlan = false;
   let showAddPointer = false;
   import { createEventDispatcher } from "svelte";
+  import { slide } from "svelte/transition";
   import PointerBar from "./PointerBar.svelte";
   const dispatch = createEventDispatcher();
   let newPointName = "";
@@ -18,7 +19,7 @@
 </script>
 
 <div
-  class="w-full rounded-md  p-2 px-4 flex gap-2 text-gray-400 border border-slate-100 relative"
+  class="w-full rounded-md  p-2 px-4 flex gap-2 text-gray-400 border border-slate-100 relative z-10 bg-white"
 >
   <span class="material-symbols-outlined cursor-pointer"> drag_indicator </span>
   <h4 class="text-black">{category.title}</h4>
@@ -114,7 +115,7 @@
   {/if}
 </div>
 {#if category.open}
-  <div class="pl-8 flex flex-col gap-2">
+  <div class="pl-8 flex flex-col gap-2" transition:slide>
     {#each category.pointers as pointer (pointer.id)}
       <PointerBar
         {pointer}
